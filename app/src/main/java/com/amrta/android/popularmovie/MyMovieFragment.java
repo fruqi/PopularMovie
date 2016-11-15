@@ -32,8 +32,8 @@ import java.util.ArrayList;
  * Created by amrta on 05/11/2016.
  */
 
-public class MyMovieFragment extends Fragment
-{
+public class MyMovieFragment extends Fragment {
+
     private static final String TAG = "MyMovieFragment";
     private MovieAdapter mMovieAdapter;
     private RecyclerView mRecyclerView;
@@ -41,8 +41,7 @@ public class MyMovieFragment extends Fragment
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate movie fragment into the view
         View rootView = inflater.inflate(R.layout.fragment_movie, container, false);
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.movie_recyclerView);
@@ -75,13 +74,11 @@ public class MyMovieFragment extends Fragment
     }
 
 
-    private class FetchMovieTask extends AsyncTask<Void, Void, String>
-    {
+    private class FetchMovieTask extends AsyncTask<Void, Void, String> {
         private static final String TAG = "FetchMovieTask";
 
         @Override
-        protected String doInBackground(Void... params)
-        {
+        protected String doInBackground(Void... params) {
             String MDB_API = "api_key";
 
             // Building movie DB api url
@@ -95,8 +92,7 @@ public class MyMovieFragment extends Fragment
             StringBuffer buffer;
             BufferedReader reader = null;
 
-            try
-            {
+            try {
                 // Prepare connection to movie db
                 URL url = new URL(movieDBUrl);
                 connection = (HttpURLConnection) url.openConnection();
@@ -129,8 +125,7 @@ public class MyMovieFragment extends Fragment
                     connection.disconnect();
                 }
 
-                if (reader != null)
-                {
+                if (reader != null) {
                     try {
                         reader.close();
                     } catch (IOException e) {
@@ -144,8 +139,7 @@ public class MyMovieFragment extends Fragment
 
 
         @Override
-        protected void onPostExecute(String jsonString)
-        {
+        protected void onPostExecute(String jsonString) {
             super.onPostExecute(jsonString);
 
             String MDB_RESULTS = "results";
@@ -163,8 +157,7 @@ public class MyMovieFragment extends Fragment
                     return;
                 }
 
-                for (int i = 0; i < results.length(); i++)
-                {
+                for (int i = 0; i < results.length(); i++) {
                     JSONObject movie = results.getJSONObject(i);
 //                    String title = movie.getString(MDB_TITLE);
 //                    list.add(title);
@@ -182,8 +175,7 @@ public class MyMovieFragment extends Fragment
     }
 
 
-    private class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder>
-    {
+    private class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
         private ArrayList<String> posterList;
 
 
@@ -214,8 +206,7 @@ public class MyMovieFragment extends Fragment
             Solution from Stackoverlow
             http://stackoverflow.com/questions/30053610/best-way-to-update-data-with-a-recyclerview-adapter
          */
-        public void updateList(ArrayList<String> list)
-        {
+        public void updateList(ArrayList<String> list) {
             posterList.clear();
             posterList.addAll(list);
             notifyDataSetChanged();
@@ -223,21 +214,18 @@ public class MyMovieFragment extends Fragment
     }
 
 
-    private class MovieViewHolder extends RecyclerView.ViewHolder
-    {
+    private class MovieViewHolder extends RecyclerView.ViewHolder {
         private ImageView mImageView;
         private Context mContext;
 
-        public MovieViewHolder(View itemView, Context context)
-        {
+        public MovieViewHolder(View itemView, Context context) {
             super(itemView);
 //            mImageView = (ImageView) itemView.findViewById(R.id.image);
             mImageView = (ImageView) itemView;
             mContext = context;
         }
 
-        public void bindView(String url)
-        {
+        public void bindView(String url) {
             String posterUrl = "http://image.tmdb.org/t/p/w185/" + url;
             Picasso.with(mContext).load(posterUrl).into(mImageView);
         }

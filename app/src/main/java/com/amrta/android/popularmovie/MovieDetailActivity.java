@@ -10,14 +10,13 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class MovieDetailActivity extends AppCompatActivity
-{
+public class MovieDetailActivity extends AppCompatActivity {
+
     private static final String TAG = "MovieDetailActivity";
     private static final String EXTRA_MOVIE = "com.amrta.android.popularmovie.movie";
 
 
-    public static Intent newIntent(Context context, Parcelable movieParcelable)
-    {
+    public static Intent newIntent(Context context, Parcelable movieParcelable) {
         Intent intent = new Intent(context, MovieDetailActivity.class);
         intent.putExtra(EXTRA_MOVIE, movieParcelable);
 
@@ -25,8 +24,7 @@ public class MovieDetailActivity extends AppCompatActivity
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
 

@@ -21,7 +21,7 @@ android {
     }
 
     buildTypes.each {
-        it.buildConfigField('String', 'MOVIE_DB_API_KEY', '"<PUT YOUR KEY HERE>"')
+        it.buildConfigField('String', 'MOVIE_DB_API_KEY', '"f2cea4aaa316f8023b795be155ac4697"')
     }
 }
 
@@ -34,4 +34,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.jakewharton:butterknife:8.4.0'
 }

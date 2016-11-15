@@ -8,14 +8,14 @@ import android.os.Parcelable;
  */
 
 public class Movie implements Parcelable {
+
     private String title;
     private String poster;
     private String overview;
     private double rating;
     private String releaseDate;
 
-    public Movie(String title, String poster, String overview, double rating, String releaseDate)
-    {
+    public Movie(String title, String poster, String overview, double rating, String releaseDate) {
         this.title = title;
         this.poster = poster;
         this.overview = overview;

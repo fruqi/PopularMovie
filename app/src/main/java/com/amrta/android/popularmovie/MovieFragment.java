@@ -40,8 +40,8 @@ import java.util.List;
  * Created by amrta on 08/11/2016.
  */
 
-public class MovieFragment extends Fragment
-{
+public class MovieFragment extends Fragment {
+
     private static final String TAG = "MovieFragment";
     private static final String BUNDLE_MOVIE = "bundle_movie";
 
@@ -51,8 +51,7 @@ public class MovieFragment extends Fragment
 
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) 
-    {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
@@ -68,9 +67,9 @@ public class MovieFragment extends Fragment
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView | ");
+
         // Inflate movie fragment into the view
         View rootView = inflater.inflate(R.layout.fragment_my_movie, container, false);
 
@@ -89,8 +88,7 @@ public class MovieFragment extends Fragment
 
                 MovieAdapter adapter = (MovieAdapter) parent.getAdapter();
 
-                if (adapter != null)
-                {
+                if (adapter != null) {
                     // Get selected movie item from adapter
                     Movie movie = (Movie) parent.getAdapter().getItem(position);
 
@@ -108,8 +106,7 @@ public class MovieFragment extends Fragment
 
 
     @Override
-    public void onSaveInstanceState(Bundle outState)
-    {
+    public void onSaveInstanceState(Bundle outState) {
         outState.putParcelableArrayList(BUNDLE_MOVIE, (ArrayList<Movie>) mMovieList);
         super.onSaveInstanceState(outState);
     }
@@ -123,8 +120,7 @@ public class MovieFragment extends Fragment
     
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
-    {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.fragment_movie, menu);
     }
