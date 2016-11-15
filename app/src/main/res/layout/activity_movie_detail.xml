@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:id="@+id/activity_movie_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.amrta.android.popularmovie.MovieDetailActivity"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/activity_box_height"
+            android:gravity="center"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:background="@color/colorPrimaryLight">
+
+            <TextView
+                android:id="@+id/movie_title_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_headline"
+                tools:text="Movie Title" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_margin_10"
+            android:layout_marginBottom="@dimen/activity_zero_dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/movie_poster_imageView"
+                    android:layout_width="@dimen/activity_zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    tools:src="@drawable/movie_poster"/>
+
+                <LinearLayout
+                    android:layout_width="@dimen/activity_zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/activity_two_four_dp"
+                    android:paddingRight="@dimen/activity_two_four_dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/movie_release_date_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:textSize="@dimen/text_heading"
+                        tools:text="2015"/>
+
+                    <TextView
+                        android:id="@+id/movie_duration_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:paddingBottom="@dimen/activity_eight_dp"
+                        tools:text="120min"/>
+
+                    <TextView
+                        android:id="@+id/movie_rating_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/activity_eight_dp"
+                        tools:text="8.1/10"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_one_six_dp">
+
+                <TextView
+                    android:id="@+id/movie_overview_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/dummy_text"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+
